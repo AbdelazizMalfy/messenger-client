@@ -3,9 +3,8 @@ import { ListGroup } from 'react-bootstrap'
 import { useContacts } from '../context/ContactsProvider'
 
 export default function Contacts() {
-    const { contacts } = useContacts()
+  const { contacts } = useContacts()
 
-    console.log(contacts)
   return (
     <ListGroup variant='flush'>
 			{contacts.map(contact => (

@@ -1,11 +1,15 @@
 import React from 'react'
 import Sidebar from './Sidebar'
+import ConversationContent from './ConversationContent'
+import { useConversations } from '../context/ConversationsProvider'
 
 export default function Dashboard({ id }) {
-    console.log('id', id)
+  const { selectedConversation } = useConversations()
+
   return (
     <div className='d-flex' style={{ height: '100vh' }}>
         <Sidebar id={id} />
+        {selectedConversation && <ConversationContent />}
     </div>
   )
 }
